@@ -1,0 +1,18 @@
+{
+  "id": "/storm/ui",
+   
+  "cpus": 0.2,
+  "mem": 100.0,
+  "instances": 1,
+  "env": {"MASTER_HOSTNAME": "yourMesosMasterHostname"},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "obaidsalikeen/storm-ui:0.9.3",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8080, "hostPort": 0, "servicePort": 8888, "protocol": "tcp" }        
+      ]
+    }
+  }
+}

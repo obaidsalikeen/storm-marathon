@@ -1,0 +1,18 @@
+{
+  "id": "/storm/zookeeper",
+   
+  "cpus": 0.5,
+  "mem": 200.0,
+  "instances": 1,
+  "env": {"MASTER_HOSTNAME": "yourMesosMasterHostname"},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "wurstmeister/zookeeper",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 2181, "hostPort": 0, "servicePort": 2181, "protocol": "tcp" }        
+      ]
+    }
+  }
+}

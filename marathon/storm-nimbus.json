@@ -1,0 +1,20 @@
+{
+  "id": "/storm/nimbus",
+   
+  "cpus": 1,
+  "mem": 300.0,
+  "instances": 1,
+  "env": {"MASTER_HOSTNAME": "yourMesosMasterHostname"},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "obaidsalikeen/storm-nimbus:0.9.3",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 6627, "hostPort": 0, "servicePort": 6627, "protocol": "tcp" },
+        { "containerPort": 3772, "hostPort": 0, "servicePort": 3772, "protocol": "tcp" },    
+        { "containerPort": 3773, "hostPort": 0, "servicePort": 3773, "protocol": "tcp" }     
+      ]
+    }
+  }
+}

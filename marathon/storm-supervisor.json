@@ -1,0 +1,22 @@
+{
+  "id": "/storm/supervisor",
+   
+  "cpus": 2,
+  "mem": 320.0,
+  "instances": 1,
+  "env": {"MASTER_HOSTNAME": "yourMesosMasterHostname"},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "obaidsalikeen/storm-supervisor:0.9.3",
+      "network": "BRIDGE",
+      "portMappings": [
+        { "containerPort": 6700, "hostPort": 0, "servicePort": 6700, "protocol": "tcp" },        
+	{ "containerPort": 6701, "hostPort": 0, "servicePort": 6701, "protocol": "tcp" },        
+	{ "containerPort": 6702, "hostPort": 0, "servicePort": 6702, "protocol": "tcp" },        
+	{ "containerPort": 6703, "hostPort": 0, "servicePort": 6703, "protocol": "tcp" },        
+	{ "containerPort": 6704, "hostPort": 0, "servicePort": 6704, "protocol": "tcp" }        
+      ]
+    }
+  }
+}

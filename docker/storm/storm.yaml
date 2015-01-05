@@ -1,0 +1,20 @@
+########### These MUST be filled in for a storm configuration
+# storm.zookeeper.servers:
+#     - "server1"
+#     - "server2"
+storm.zookeeper.servers:
+    - "%zookeeper%"
+
+#
+# nimbus.host: "nimbus"
+nimbus.host: "%nimbus%"
+
+#
+#
+# Configure ports for running the workers on a given supervisor machine. We will configure 5 cores for each supervisors.
+supervisor.slots.ports:
+- 6700
+- 6701
+- 6702
+- 6703
+- 6704
